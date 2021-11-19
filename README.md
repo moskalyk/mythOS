@@ -15,7 +15,7 @@ This hand selection of altering events through the beliefs and imagination of pe
 
 Aimed as a non-profit, what is seen by a system and what should be unseen. Moderating and extension from predictive forces to pervade certain confusions in the dark, shining light towards optimistic outcomes.
 
-![I CHING](./ching.png)
+![I CHING](./ching.jpeg)
 
 # myth & timeline
 2022 - 23rd Phoenix release card in NFC Veriable
@@ -28,7 +28,7 @@ By expanding the scope, might we align micro finite games to the infinite potent
 
 # UI / UX
 ### Portal Access
-![I CHING](./ching.png)
+![mythos](./mythos.png)
 
 ### ENS login
 TODO.
