@@ -2,10 +2,10 @@
 A derivation function from prior hackathon projects aimed at verifiable telegenetic curation and assemblage, through prior-card pulls, hastas ritual, & post life action.
 
 # hypothesis & research
-An investigate into open infrastructure for UV light and frequencies. It’s a further exploration into the plasticity of the mind, through coupling dark matter and light. Aligns around the phrase by the philospher Flusser, where “cameras are thinking machines”, so by far as thinking with our hands (EthOStep) with cameras as presented, can we develop a computational camera for connection from afar, in wakeful (start) to dreams (end). Software has become more important than hardware. Photographers are thinking as hybrid artists. Ritual hand practitioners equating themselves to causal patterns in mind and body connection, in youth, old age and distant friendships across time and space.
+An investigate into open infrastructure for UV light and frequencies. It’s a further exploration into the plasticity of the mind, through coupling dark matter and light. Aligns around the phrase by the philospher Flusser, where “cameras are thinking machines”, so as far as thinking with our hands (EthOStep) with cameras as presented, can we develop a computational camera for connection from afar, in wakeful (start) to dreams (end). Software has become more important than hardware. Photographers are thinking as hybrid artists. Ritual hand practitioners equating themselves to causal patterns in mind and body connection, in youth, old age and distant friendships across time and space.
 
 ### history analogs
-Like how Daguerreotypes modernized the portrait of identity, the project aims to help assemble squads in rhythmic direction, across distances, like that of morse code signatures for communication in energetic forces, but from energy activations derived from oracles.
+Like how Daguerreotypes modernized the portrait of identity, the project aims to help assemble squads in rhythmic direction, across distances, like that of morse code signatures for communication in energetic forces, but from energy activations derived from tarot oracles.
 
 The intersubjective opinion and truth, routed in cycles of astronomical cycles whereby mappings of cross internet connection might be guided by tarots, and objectively tracked via hardware interfaces, like non-invasive computer devices.
 
@@ -13,16 +13,16 @@ The intersubjective opinion and truth, routed in cycles of astronomical cycles w
 
 This hand selection of altering events through the beliefs and imagination of people may help tune the statement: "Know thyself, nothing in excess." as we begin character communication beginning with long known alphabets (e.g. phoenician, etc.), to something more comprehensible and complete by modern computational standards. 
 
-Aimed as a non-profit, what is seen by a system and what should be unseen. Moderating and extension from predictive forces to pervade certain confusions in the dark, shining light towards optimistic outcomes.
+Aimed as a non-profit.
 
 ![I CHING](./ching.jpeg)
 
 # myth & timeline
-2022 - 23rd Phoenix release card in NFC Veriable
+2022 - 23rd as XXII Phoenix release card in NFC Veriable version (Reed)
 Releasing 2 cards per year, in summer solstice & winter solstice to a max of 30.
 
 # inspiration
-deck -> tarot -> perculated secrets of the arcana
+Play card deck <- tarot -> perculated secrets of the arcana
 
 By expanding the scope, might we align micro finite games to the infinite potential of the human collective, as value flow migrates in patterns, like the oceans that dictate our climate.
 
@@ -48,7 +48,7 @@ On hand gesture with combined p2p state transfer uding fluence, activate unicode
 NFC embeded altair as verifiable points in a matrix.
 TODO
 
-# service announcement
+# services
 telephony arcana, jungian archetypal paths: https://twitter.com/Moskalyk/status/1459838700490272769
 
 ## previous projects
