@@ -1,5 +1,7 @@
 # mythOS
-A derivation function from prior hackathon projects aimed at verifiable telegenetic curation and assemblage, through prior-card pulls, hastas ritual, & post life action.
+A derived dream from prior hackathon projects aimed at verifiable telegenetic curation and assemblage, through prior-card pulls, hastas ritual, & post life action.
+
+User story: 2 lovers from a far, sync up with hand rituals. They track cards together and learn through Gaia. Their hands touch, and the universe falls away from that moment. They find peace.
 
 # hypothesis & research
 An investigate into open infrastructure for UV light and frequencies. It’s a further exploration into the plasticity of the mind, through coupling dark matter and light. Aligns around the phrase by the philospher Flusser, where “cameras are thinking machines”, so as far as thinking with our hands (EthOStep) with cameras as presented, can we develop a computational camera for connection from afar, in wakeful (start) to dreams (end). Software has become more important than hardware. Photographers are thinking as hybrid artists. Ritual hand practitioners equating themselves to causal patterns in mind and body connection, in youth, old age and distant friendships across time and space.
