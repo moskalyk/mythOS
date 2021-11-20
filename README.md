@@ -22,6 +22,7 @@ Aimed as a non-profit.
 # myth & timeline
 2022 - 23rd as XXII Phoenix release card in NFC Veriable version (Reed)
 Releasing 2 cards per year, in summer solstice & winter solstice to a max of 30.
+![commits](./commits.png)
 
 # inspiration
 Play card deck <- tarot -> perculated secrets of the arcana
