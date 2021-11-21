@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# mythOS
+A derived dream from prior hackathon projects aimed at verifiable telegenetic curation and assemblage, through prior-card pulls, hastas ritual, & post life action.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+User story: 2 lovers from a far, sync up with hand rituals. They track cards together and learn through Gaia. Their hands touch, and the universe falls away from that moment. They find peace.
 
-## Available Scripts
+# hypothesis & research
+An investigate into open infrastructure for UV light and frequencies. It’s a further exploration into the plasticity of the mind, through coupling dark matter and light. Aligns around the phrase by the philospher Flusser, where “cameras are thinking machines”, so as far as thinking with our hands (EthOStep) with cameras as presented, can we develop a computational camera for connection from afar, in wakeful (start) to dreams (end). Software has become more important than hardware. Photographers are thinking as hybrid artists. Ritual hand practitioners equating themselves to causal patterns in mind and body connection, in youth, old age and distant friendships across time and space.
 
-In the project directory, you can run:
+### history analogs
+Like how Daguerreotypes modernized the portrait of identity, the project aims to help assemble squads in rhythmic direction, across distances, like that of morse code signatures for communication in energetic forces, but from energy activations derived from tarot oracles.
 
-### `yarn start`
+The intersubjective opinion and truth, routed in cycles of astronomical cycles whereby mappings of cross internet connection might be guided by tarots, and objectively tracked via hardware interfaces, like non-invasive computer devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+“Oracular systems function through contact wth a kind of hyper time, where events can be observed as hyper dimensional networks. In this context, conventional causality may not be conceivable, and things happen for reasons other than causes." 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This hand selection of altering events through the beliefs and imagination of people may help tune the statement: "Know thyself, nothing in excess." as we begin character communication beginning with long known alphabets (e.g. phoenician, etc.), to something more comprehensible and complete by modern computational standards. 
 
-### `yarn test`
+Aimed as a non-profit.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![I CHING](./ching.jpeg)
 
-### `yarn build`
+# myth & timeline
+2022 - 23rd as XXII Phoenix release card in NFC Veriable version (Reed)
+Releasing 2 cards per year, in summer solstice & winter solstice to a max of 30.
+![commits](./commits.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# inspiration
+Play card deck <- tarot -> perculated secrets of the arcana
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+By expanding the scope, might we align micro finite games to the infinite potential of the human collective, as value flow migrates in patterns, like the oceans that dictate our climate.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# UI / UX
+### Portal Access
+![mythos](./mythos.png)
 
-### `yarn eject`
+### ENS login
+TODO.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Gaia Tarot Drip
+TODO
+![gaia](./gaia.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Livepeer + Hand Encodings
+TODO. Just seeing outlines of our hands, with seletons on the trees, assembling new buidlings with love.
+![hastas](./hastas.jpeg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Gelato network + smart contract activations for unicode swap
+On hand gesture with combined p2p state transfer uding fluence, activate unicode swap for resources, like a cross internet handshake.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# meta8
+NFC embeded altair as verifiable points in a matrix.
+TODO
 
-## Learn More
+# services
+telephony arcana, jungian archetypal paths: https://twitter.com/Moskalyk/status/1459838700490272769
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## previous projects
+- Reed: https://showcase.ethglobal.com/unicode/reed
+- ArBr: https://showcase.ethglobal.com/ethonline2021/arbr
+- Ethostep: https://youtu.be/liHEr4Pn0_Y
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
