@@ -1,17 +1,65 @@
+// eslint-disable-next-line no-restricted-globals
+
 import logo from './logo.svg';
 import './App.css';
 
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
-require('./lib/camera_utils.js')
-require('./lib/control_utils.js')
-require('./lib/control_utils_3d.js')
-require('./lib/drawing_utils.js')
-require('./lib/hands.js')
+// import Input from '@mui/material/Input';
+
+// require('./lib/camera_utils.js')
+// require('./lib/control_utils.js')
+// require('./lib/control_utils_3d.js')
+// require('./lib/drawing_utils.js')
+// require('./lib/hands.js')
+
+import Port from './Port.js'
+var CommitsGraph = require('react-commits-graph')
+var commits = require('./commits.json')
+
+var selected = null
+
 
 function App() {
 
-  useEffect(()=> {
+  const [isThisThingOn, setIsThisThingOn] = useState(false)
+  const [ensValue, setEnsValue] = useState('')
+  const [home, setHome] = useState(true)
+
+  useEffect(async ()=> {
+    const root = document.documentElement;
+    const sign = document.getElementById("sign");
+    const flicker = document.getElementById("flicker");
+
+
+    if(!isThisThingOn){
+      document.onmousemove = mouse;
+
+      function mouse(e) {
+        let x = (window.event.clientX / root.offsetWidth) * 90 - 45;
+        let y = (window.event.clientY / root.offsetHeight) * 90 - 45;
+        sign.style.fontVariationSettings = `'HROT' ${x}, 'VROT' ${y}`;
+        sign.style.transform = `rotatex(${y * -0.25}deg) rotatey(${x * 0.25}deg)`;
+      }
+
+      setInterval(turnItOn, 50);
+
+      function turnItOn() {
+        let v = Math.round(Math.random());
+        flicker.style.opacity = v;
+      }
+      const port = new Port()
+
+      const cloud = await port.getCloud()
+      console.log(cloud)
+
+      const inspect = await port.inspect()
+      console.log(inspect)
+
+      setIsThisThingOn(true)
+    }
+
+
     // You can change global variables here:
     var radius = 240; // how big of the radius
     var autoRotate = true; // auto rotate or not
@@ -138,144 +186,142 @@ function App() {
       init(1);
     };
 
-    // 
-    const videoElement = document.getElementsByClassName('input_video')[0];
-    const canvasElement = document.getElementsByClassName('output_canvas')[0];
-    const canvasCtx = canvasElement.getContext('2d');
-    const controls = window;
-    const drawingUtils = window;
+    // // ============================ //
+    // const videoElement = document.getElementsByClassName('input_video')[0];
+    // const canvasElement = document.getElementsByClassName('output_canvas')[0];
+    // const canvasCtx = canvasElement.getContext('2d');
+    // const controls = window;
+    // const drawingUtils = window;
 
-    const controls3d = window;
-    const mpHands = window;
+    // const controls3d = window;
+    // const mpHands = window;
 
-    const config = { locateFile: (file) => {
-        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${mpHands.VERSION}/${file}`;
-    } };
+    // const config = { locateFile: (file) => {
+    //     return `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${mpHands.VERSION}/${file}`;
+    // } };
 
-    const landmarkContainer = document.getElementsByClassName('landmark-grid-container')[0];
-    const grid = new controls3d.LandmarkGrid(landmarkContainer, {
-        connectionColor: 0xfff,
-        definedColors: [{ name: 'Left', value: 0xffa500 }, { name: 'Right', value: 0x00ffff }],
-        range: 0.2,
-        fitToGrid: false,
-        labelSuffix: 'm',
-        landmarkSize: 2,
-        numCellsPerAxis: 4,
-        showHidden: false,
-        centered: true,
-    });
-
-    function onResults(results) {
-        // Draw the overlays.
-        canvasCtx.save();
-        canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-        canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
-        if (results.multiHandLandmarks && results.multiHandedness) {
-            for (let index = 0; index < results.multiHandLandmarks.length; index++) {
-                const classification = results.multiHandedness[index];
-                const isRightHand = classification.label === 'Right';
-                const landmarks = results.multiHandLandmarks[index];
-                drawingUtils.drawConnectors(canvasCtx, landmarks, mpHands.HAND_CONNECTIONS, { color: isRightHand ? '#00FF00' : '#FF0000' });
-                drawingUtils.drawLandmarks(canvasCtx, landmarks, {
-                    color: isRightHand ? '#00FF00' : '#FF0000',
-                    fillColor: isRightHand ? '#FF0000' : '#00FF00',
-                    radius: (data) => {
-                        return drawingUtils.lerp(data.from.z, -0.15, .1, 10, 1);
-                    }
-                });
-            }
-        }
-        canvasCtx.restore();
-        if (results.multiHandWorldLandmarks) {
-            // We only get to call updateLandmarks once, so we need to cook the data to
-            // fit. The landmarks just merge, but the connections need to be offset.
-            const landmarks = results.multiHandWorldLandmarks.reduce((prev, current) => [...prev, ...current], []);
-            const colors = [];
-            let connections = [];
-            // console.log(landmarks)
-            for (let loop = 0; loop < results.multiHandWorldLandmarks.length; ++loop) {
-                const offset = loop * mpHands.HAND_CONNECTIONS.length;
-                const offsetConnections = mpHands.HAND_CONNECTIONS.map((connection) => [connection[0] + offset, connection[1] + offset]);
-                // console.log(offsetConnections)
-                connections = connections.concat(offsetConnections);
-                const classification = results.multiHandedness[loop];
-                colors.push({
-                    list: offsetConnections.map((unused, i) => i + offset),
-                    color: classification.label,
-                });
-                // console.log(colors)
-            }
-            grid.updateLandmarks(landmarks, connections, colors);
-        }
-        else {
-            grid.updateLandmarks([]);
-        }
-    }
-
-    const hands = new mpHands.Hands(config);
-    hands.onResults(onResults);
+    // const landmarkContainer = document.getElementsByClassName('landmark-grid-container')[0];
+    // const grid = new controls3d.LandmarkGrid(landmarkContainer, {
+    //     connectionColor: 0xfff,
+    //     definedColors: [{ name: 'Left', value: 0xffa500 }, { name: 'Right', value: 0x00ffff }],
+    //     range: 0.2,
+    //     fitToGrid: false,
+    //     labelSuffix: 'm',
+    //     landmarkSize: 2,
+    //     numCellsPerAxis: 4,
+    //     showHidden: false,
+    //     centered: true,
+    // });
 
     // function onResults(results) {
-    //   canvasCtx.save();
-    //   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-    //   canvasCtx.drawImage(
-    //       results.image, 0, 0, canvasElement.width, canvasElement.height);
-    //   if (results.multiHandLandmarks) {
-    //     for (const landmarks of results.multiHandLandmarks) {
-    //       drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-    //                      {color: '#00FF00', lineWidth: 5});
-    //       drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
+    //     // Draw the overlays.
+    //     canvasCtx.save();
+    //     canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+    //     canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+    //     if (results.multiHandLandmarks && results.multiHandedness) {
+    //         for (let index = 0; index < results.multiHandLandmarks.length; index++) {
+    //             const classification = results.multiHandedness[index];
+    //             const isRightHand = classification.label === 'Right';
+    //             const landmarks = results.multiHandLandmarks[index];
+    //             drawingUtils.drawConnectors(canvasCtx, landmarks, mpHands.HAND_CONNECTIONS, { color: isRightHand ? '#00FF00' : '#FF0000' });
+    //             drawingUtils.drawLandmarks(canvasCtx, landmarks, {
+    //                 color: isRightHand ? '#00FF00' : '#FF0000',
+    //                 fillColor: isRightHand ? '#FF0000' : '#00FF00',
+    //                 radius: (data) => {
+    //                     return drawingUtils.lerp(data.from.z, -0.15, .1, 10, 1);
+    //                 }
+    //             });
+    //         }
     //     }
-    //   }
-    //   canvasCtx.restore();
+    //     canvasCtx.restore();
+    //     if (results.multiHandWorldLandmarks) {
+    //         // We only get to call updateLandmarks once, so we need to cook the data to
+    //         // fit. The landmarks just merge, but the connections need to be offset.
+    //         const landmarks = results.multiHandWorldLandmarks.reduce((prev, current) => [...prev, ...current], []);
+    //         const colors = [];
+    //         let connections = [];
+    //         // console.log(landmarks)
+    //         for (let loop = 0; loop < results.multiHandWorldLandmarks.length; ++loop) {
+    //             const offset = loop * mpHands.HAND_CONNECTIONS.length;
+    //             const offsetConnections = mpHands.HAND_CONNECTIONS.map((connection) => [connection[0] + offset, connection[1] + offset]);
+    //             // console.log(offsetConnections)
+    //             connections = connections.concat(offsetConnections);
+    //             const classification = results.multiHandedness[loop];
+    //             colors.push({
+    //                 list: offsetConnections.map((unused, i) => i + offset),
+    //                 color: classification.label,
+    //             });
+    //             // console.log(colors)
+    //         }
+    //         grid.updateLandmarks(landmarks, connections, colors);
+    //     }
+    //     else {
+    //         grid.updateLandmarks([]);
+    //     }
     // }
 
-    // const hands = new Hands({locateFile: (file) => {
-    //   return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
-    // }});
-    hands.setOptions({
-      maxNumHands: 2,
-      modelComplexity: 1,
-      minDetectionConfidence: 0.5,
-      minTrackingConfidence: 0.5
-    });
+    // const hands = new mpHands.Hands(config);
     // hands.onResults(onResults);
 
-    const camera = new Camera(videoElement, {
-      onFrame: async () => {
-        await hands.send({image: videoElement});
-      },
-      width: 1280,
-      height: 720
-    });
-    camera.start();
+    // hands.setOptions({
+    //   maxNumHands: 2,
+    //   modelComplexity: 1,
+    //   minDetectionConfidence: 0.5,
+    //   minTrackingConfidence: 0.5
+    // });
+    // // hands.onResults(onResults);
+
+    // const camera = new Camera(videoElement, {
+    //   onFrame: async () => {
+    //     await hands.send({image: videoElement});
+    //   },
+    //   width: 1280,
+    //   height: 720
+    // });
+    // camera.start();
+
   })
+
+  const handleChange = (e) => {
+    console.log(e.state.value)
+    setEnsValue(e.state.value)
+  }
+
+
+  function handleClick(sha) {
+    selected = sha
+    // render()
+  }
 
   return (
     <div className="App">
 
-      <div id="drag-container">
-        <div id="ground"></div>
-
-        <div id="spin-container">
-          <img src="https://www.trustedtarot.com/img/cards/ace-of-cups.png" alt=""/>
-          <img src="https://www.trustedtarot.com/img/cards/five-of-wands.png" alt=""/>
-          <img src="https://www.trustedtarot.com/img/cards/five-of-cups.png" alt=""/>
-          <img src="https://www.trustedtarot.com/img/cards/seven-of-swords.png" alt=""/>
-          <img src="https://www.trustedtarot.com/img/cards/eight-of-pentacles.png" alt=""/>
-        </div>
-      </div>
-
-      <body>
-        <div class="container">
-          <video class="input_video" style="display: none;"></video>
-          <canvas class="output_canvas" width="500px" height="320px"></canvas>
-        </div>
-        <div class='square-box'>
-          <div class="landmark-grid-container">
+    { home ? (
+      <>
+        <div id="drag-container">
+          <br/>
+          <div id="ground"></div>
+          <div id="spin-container">
+            <img src="https://www.trustedtarot.com/img/cards/ace-of-cups.png" alt=""/>
+            <img src="https://www.trustedtarot.com/img/cards/five-of-wands.png" alt=""/>
+            <img src="https://www.trustedtarot.com/img/cards/five-of-cups.png" alt=""/>
+            <img src="https://www.trustedtarot.com/img/cards/seven-of-swords.png" alt=""/>
+            <img src="https://www.trustedtarot.com/img/cards/eight-of-pentacles.png" alt=""/>
           </div>
         </div>
-      </body>
+        <h1 contenteditable spellcheck="false" id="sign" class="sign">myth<span id="flicker" class="flicker">O</span>s</h1>
+      </>
+      ) : (
+      <>
+        <div>gaia</div>
+        <CommitsGraph
+          commits={commits}
+          onClick={handleClick}
+          selected={selected}
+        />
+      </>
+      ) 
+    }
     </div>
   );
 }

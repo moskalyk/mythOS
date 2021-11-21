@@ -1,0 +1,27 @@
+.input_video {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.output_canvas {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  width: 500px !important;
+}
+
+.landmark-grid-container{
+  height: 300px !important;
+  width: 300px !important;
+}
+
+canvas {
+  height: 300px !important;
+  width: 300px !important;
+}

@@ -162,3 +162,46 @@ body {
             transform: rotateY(0deg);
   }
 }
+
+@font-face {
+  font-family: "Tilt Neon";
+  src: url("https://assets.codepen.io/467/TiltNeon.woff2") format("woff2");
+}
+
+html {
+  --hue: 13deg;
+  font-family: "Tilt Neon", sans-serif !important;
+  background: #000 radial-gradient(hsl(var(--hue) 100% 15%) 20%, #000 75%);
+  background-size: 140vw 48vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: hsl(var(--hue) 100% 50%);
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  perspective: 25vw;
+}
+
+.sign {
+  font-weight: 400;
+  font-size: 22vw;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 0 0.1em currentcolor, 0 0 0.05em currentcolor;
+  text-align: center;
+}
+
+.flicker {
+  transition: opacity 0.4s ease-in-out;
+}
+
+::selection {
+  background-color: transparent;
+  color: cyan;
+}
+
