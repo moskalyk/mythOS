@@ -2,7 +2,7 @@ import axios from 'axios'
 import nlp from 'compromise'
 
 class Port {
-	constructor(apiKey = "90959bcc-3bba-4cd3-9760-a669635f0985", ens = "0x"){
+	constructor(apiKey = "", ens = "0x"){
 		// credentials
 		this.apiKey = apiKey
 		this.querent = ens
