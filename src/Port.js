@@ -22,7 +22,7 @@ class Port {
 		const options = {
 		  method: 'POST',
 		  url: 'https://api.nftport.xyz/visual_search_by_url',
-		  headers: {'Content-Type': 'application/json', Authorization: '90959bcc-3bba-4cd3-9760-a669635f0985'},
+		  headers: {'Content-Type': 'application/json', Authorization: ''},
 		  data: {
 		    url: image
 		  }
